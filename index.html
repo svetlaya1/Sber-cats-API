@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.scss">
+    <link rel="stylesheet" href="main.css.map">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="./index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="header__menu">
+                <button data-openModal="createCat" type="button" class="header__btn">Добавить</button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div data-wr class="main">
+        </div>
+    </div>
+
+    <!--Начало модалки добавление кота-->
+
+    <div data-modalWr class="modal hidden">
+        <div data-modalContent class="modal__content"></div>
+    </div>
+  
+    <template id="createCatForm">
+        <h3>Добавить нового кота:</h3>
+        <form class="form" name="createCatForm">
+          <div class="form__box"><input  class="form__input" type="number" name="id" placeholder="Id" required class="form-control"/></div>
+          <div class="form__box"><input  class="form__input" type="text" name="name" placeholder="Имя" required class="form-control"/></div>
+          <div class="form__box"><input  class="form__input" type="number" name="age" placeholder="Возраст" required class="form-control"/></div>
+          <div class="form__box"><input  class="form__input" type="text" name="description" placeholder="Описание" required class="form-control"/></div>
+          <div class="form__box"><input  class="form__input" type="text" name="image" placeholder="Ссылка на изображение" class="form-control"/></div>
+          <div class="form__box"><input  class="form__input rating rating--nojs" type="range" name="rate" max="10" value="0"></div>
+          <div class="form-check"><input type="checkbox" name="favorite" class="form-check-input" id="exampleCheck1"/>
+            <label class="form-check-label" for="exampleCheck1">Этот котик любимый</label>
+          </div>
+          <button type="submit" class="form__btn header__btn">Добавить</button>
+        </form>
+    </template>
+
+    <!--Конец модалки добавление кота-->
+
+    <!--Начало модалки подробнее о коте-->
+
+    <div data-modalWr2 class="modal hidden">
+        <div data-wr2 data-modalContent2 class="modal__content"></div>
+    </div>
+
+    <!--Конец модалки подробнее о коте-->
+
+    <!--Начало модалки изменения кота-->
+
+    <div data-modalWr3 class="modal hidden">
+        <div data-wr3 data-modalContent3 class="modal__content"></div>
+    </div>
+    
+    <template id="removeCatForm">
+        <form class="form" name="removeCatForm">
+          <div data-name class="form__box"><input  class="form__input" type="text" name="name" placeholder="Имя" required class="form-control"/></div>
+          <div data-age class="form__box"><input  class="form__input" type="number" name="age" placeholder="Возраст" required class="form-control"/></div>
+          <div data-description class="form__box"><input  class="form__input" type="text" name="description" placeholder="Описание" required class="form-control"/></div>
+          <div data-image class="form__box"><input  class="form__input" type="text" name="image" placeholder="Ссылка на изображение" class="form-control"/></div>
+          <div data-renge class="form__box"><input  class="form__input rating rating--nojs" type="range" name="rate" max="10" value="0"></div>
+          <div data-favorite class="form-check"><input type="checkbox" name="favorite" class="form-check-input" id="exampleCheck1"/>
+            <label class="form-check-label" for="exampleCheck1">Этот котик любимый</label>
+          </div>
+          <button type="submit" class="form__btn header__btn">Изменить</button>
+        </form>
+    </template>
+    <!--Конец модалки изменения кота-->
+
+
+</body>
+</html>
